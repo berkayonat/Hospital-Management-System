@@ -347,6 +347,7 @@ namespace Hastane_Otomasyon
                 cmd5.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Appointment Deleted !");
+                AppointmentCheck();
                 AppointmentList();
             }
             else
