@@ -20,239 +20,7 @@ namespace Hastane_Otomasyon
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-CD8COQV;Initial Catalog=HastaneOtomasyon;Integrated Security=True");
-        void AppointmentList()
-        {
-            con.Open();
-            SqlDataAdapter sda17 = new SqlDataAdapter("SELECT A.Date,AT.Time,PHY.Name AS Physician,D.DepartmentName AS Department FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join Physician PHY ON A.PhysicianId=PHY.PhysicianId join Department D ON PHY.DepartmentId=D.DepartmentId WHERE A.Date >= GETDATE() AND A.PatientId=(SELECT PatientId FROM PatientRegistration WHERE IdNumber='" + txtIdNo.Text + "')ORDER BY A.Date ASC", con);
-            DataTable dt17 = new DataTable();
-            sda17.Fill(dt17);
-            dataGridView1.DataSource = dt17;
-            con.Close();
-        }
-
-        private void PatientPanel_Load(object sender, EventArgs e)
-        {
-
-            // TODO: This line of code loads data into the 'hastaneOtomasyonDataSet2.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.hastaneOtomasyonDataSet2.Department);
-
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "'", con);
-            SqlDataReader read = cmd.ExecuteReader();
-            while (read.Read())
-            {
-                txtName.Text = read["Name"].ToString();
-                txtSurname.Text = read["Surname"].ToString();
-                mskdTxtPhone.Text = read["PhoneNumber"].ToString();
-                txtEmail.Text = read["Email"].ToString();
-                txtGender.Text = read["Gender"].ToString();
-                dTPDOB.Text = read["DateOfBirth"].ToString();
-            }
-
-            con.Close();
-            AppointmentList();
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (txtPw.Text != "" && txtIdNo.Text != "")
-            {
-
-                if (txtPw.Text == txtRPw.Text)
-                {
-                    con.Open();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE PatientRegistration set Name='" + txtName.Text + "',Surname='" + txtSurname.Text + "',PhoneNumber='" + mskdTxtPhone.Text + "',Email='" + txtEmail.Text + "',Gender='" + txtGender.Text + "',DateOfBirth='" + dTPDOB.Value.ToString("yyyy-MM-dd") + "',Password='" + txtPw.Text + "' where IdNumber='" + txtIdNo.Text + "'", con);
-                    cmd2.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Registration updated");
-                }
-                else
-                {
-                    MessageBox.Show("Passwords do not match !");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter password and ID number !");
-
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBox2.Items.Clear();
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand("SELECT Name FROM Physician WHERE DepartmentId =  (SELECT DepartmentId FROM Department WHERE DepartmentName ='" + comboBox1.Text + "')", con);
-            SqlDataReader read = cmd3.ExecuteReader();
-            while (read.Read())
-            {
-                comboBox2.Items.Add(read["Name"].ToString());
-            }
-            con.Close();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button9.Text;
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button10.Text;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button11.Text;
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button13.Text;
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button14.Text;
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button15.Text;
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button16.Text;
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            txtTime.Text = button17.Text;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button9.Text + "' ) ", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                button9.BackColor = Color.Crimson;
-                button9.Enabled = false;
-            }
-            else
-            {
-                button9.BackColor = Color.SpringGreen;
-                button9.Enabled = true;
-            }
-            SqlDataAdapter sda10 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button10.Text + "' ) ", con);
-            DataTable dt10 = new DataTable();
-            sda10.Fill(dt10);
-            if (dt10.Rows.Count > 0)
-            {
-                button10.BackColor = Color.Crimson;
-                button10.Enabled = false;
-            }
-            else
-            {
-                button10.BackColor = Color.SpringGreen;
-                button10.Enabled = true;
-            }
-            SqlDataAdapter sda11 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button11.Text + "' ) ", con);
-            DataTable dt11 = new DataTable();
-            sda11.Fill(dt11);
-            if (dt11.Rows.Count > 0)
-            {
-                button11.BackColor = Color.Crimson;
-                button11.Enabled = false;
-            }
-            else
-            {
-                button11.BackColor = Color.SpringGreen;
-                button11.Enabled = true;
-            }
-            SqlDataAdapter sda12 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button13.Text + "' ) ", con);
-            DataTable dt12 = new DataTable();
-            sda12.Fill(dt12);
-            if (dt12.Rows.Count > 0)
-            {
-                button13.BackColor = Color.Crimson;
-                button13.Enabled = false;
-            }
-            else
-            {
-                button13.BackColor = Color.SpringGreen;
-                button13.Enabled = true;
-            }
-            SqlDataAdapter sda13 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button14.Text + "' ) ", con);
-            DataTable dt13 = new DataTable();
-            sda13.Fill(dt13);
-            if (dt13.Rows.Count > 0)
-            {
-                button14.BackColor = Color.Crimson;
-                button14.Enabled = false;
-            }
-            else
-            {
-                button14.BackColor = Color.SpringGreen;
-                button14.Enabled = true;
-            }
-            SqlDataAdapter sda14 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button15.Text + "' ) ", con);
-            DataTable dt14 = new DataTable();
-            sda14.Fill(dt14);
-            if (dt14.Rows.Count > 0)
-            {
-                button15.BackColor = Color.Crimson;
-                button15.Enabled = false;
-            }
-            else
-            {
-                button15.BackColor = Color.SpringGreen;
-                button15.Enabled = true;
-            }
-            SqlDataAdapter sda15 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button16.Text + "' ) ", con);
-            DataTable dt15 = new DataTable();
-            sda15.Fill(dt15);
-            if (dt15.Rows.Count > 0)
-            {
-                button16.BackColor = Color.Crimson;
-                button16.Enabled = false;
-            }
-            else
-            {
-                button16.BackColor = Color.SpringGreen;
-                button16.Enabled = true;
-            }
-            SqlDataAdapter sda16 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button17.Text + "' ) ", con);
-            DataTable dt16 = new DataTable();
-            sda16.Fill(dt16);
-            if (dt16.Rows.Count > 0)
-            {
-                button17.BackColor = Color.Crimson;
-                button17.Enabled = false;
-            }
-            else
-            {
-                button17.BackColor = Color.SpringGreen;
-                button17.Enabled = true;
-            }
-            con.Close();
-        }
-
-        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        void AppointmentCheck()
         {
             con.Open();
             SqlDataAdapter sda2 = new SqlDataAdapter("SELECT * FROM Appointment WHERE PhysicianId = (SELECT PhysicianId FROM Physician WHERE Name ='" + comboBox2.Text + "') AND Date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + button9.Text + "' ) ", con);
@@ -359,7 +127,141 @@ namespace Hastane_Otomasyon
                 button17.BackColor = Color.SpringGreen;
                 button17.Enabled = true;
             }
+            txtTime.Text = "";
             con.Close();
+        }
+        
+        void AppointmentList()
+        {
+            con.Open();
+            SqlDataAdapter sda17 = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,PHY.Name AS Physician,D.DepartmentName AS Department FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join Physician PHY ON A.PhysicianId=PHY.PhysicianId join Department D ON PHY.DepartmentId=D.DepartmentId WHERE A.Date >= GETDATE() AND A.PatientId=(SELECT PatientId FROM PatientRegistration WHERE IdNumber='" + txtIdNo.Text + "')ORDER BY A.Date ASC", con);
+            DataTable dt17 = new DataTable();
+            sda17.Fill(dt17);
+            dataGridView1.DataSource = dt17;
+            con.Close();
+        }
+
+        private void PatientPanel_Load(object sender, EventArgs e)
+        {
+
+            // TODO: This line of code loads data into the 'hastaneOtomasyonDataSet2.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.hastaneOtomasyonDataSet2.Department);
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "'", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                txtName.Text = read["Name"].ToString();
+                txtSurname.Text = read["Surname"].ToString();
+                mskdTxtPhone.Text = read["PhoneNumber"].ToString();
+                txtEmail.Text = read["Email"].ToString();
+                txtGender.Text = read["Gender"].ToString();
+                dTPDOB.Text = read["DateOfBirth"].ToString();
+            }
+
+            con.Close();
+            AppointmentList();
+            dateTimePicker1.MinDate = DateTime.Now;
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtPw.Text != "" && txtIdNo.Text != "")
+            {
+
+                if (txtPw.Text == txtRPw.Text)
+                {
+                    con.Open();
+                    SqlCommand cmd2 = new SqlCommand("UPDATE PatientRegistration set Name='" + txtName.Text + "',Surname='" + txtSurname.Text + "',PhoneNumber='" + mskdTxtPhone.Text + "',Email='" + txtEmail.Text + "',Gender='" + txtGender.Text + "',DateOfBirth='" + dTPDOB.Value.ToString("yyyy-MM-dd") + "',Password='" + txtPw.Text + "' where IdNumber='" + txtIdNo.Text + "'", con);
+                    cmd2.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Registration updated");
+                }
+                else
+                {
+                    MessageBox.Show("Passwords do not match !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter password and ID number !");
+
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            con.Open();
+            SqlCommand cmd3 = new SqlCommand("SELECT Name FROM Physician WHERE DepartmentId =  (SELECT DepartmentId FROM Department WHERE DepartmentName ='" + comboBox1.Text + "')", con);
+            SqlDataReader read = cmd3.ExecuteReader();
+            while (read.Read())
+            {
+                comboBox2.Items.Add(read["Name"].ToString());
+            }
+            con.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button9.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button10.Text;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button11.Text;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button13.Text;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button14.Text;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button15.Text;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button16.Text;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            txtTime.Text = button17.Text;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            AppointmentCheck();
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            AppointmentCheck();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -434,6 +336,23 @@ namespace Hastane_Otomasyon
 
             
 
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                con.Open();
+                SqlCommand cmd5 = new SqlCommand("delete from Appointment where AppointmentId = '" + dataGridView1.CurrentRow.Cells["AppointmentId"].Value.ToString() + "'", con);
+                cmd5.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Appointment Deleted !");
+                AppointmentList();
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid appointment from the table below !");
+            }
         }
     }
 }

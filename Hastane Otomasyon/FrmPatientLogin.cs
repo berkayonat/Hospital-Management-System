@@ -25,7 +25,7 @@ namespace Hastane_Otomasyon
             fr.Show();
             
         }
-
+        
         private void btnHastaGiris_Click(object sender, EventArgs e)
         {
             FrmPatientPanel frm = new FrmPatientPanel();

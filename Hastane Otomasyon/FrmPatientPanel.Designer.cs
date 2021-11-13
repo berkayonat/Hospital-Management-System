@@ -104,7 +104,7 @@ namespace Hastane_Otomasyon
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 496);
+            this.groupBox1.Size = new System.Drawing.Size(406, 510);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient İnformation";
@@ -112,9 +112,9 @@ namespace Hastane_Otomasyon
             // 
             // txtRPw
             // 
-            this.txtRPw.Location = new System.Drawing.Point(172, 348);
+            this.txtRPw.Location = new System.Drawing.Point(185, 348);
             this.txtRPw.Name = "txtRPw";
-            this.txtRPw.Size = new System.Drawing.Size(149, 22);
+            this.txtRPw.Size = new System.Drawing.Size(162, 22);
             this.txtRPw.TabIndex = 35;
             this.txtRPw.UseSystemPasswordChar = true;
             // 
@@ -122,7 +122,7 @@ namespace Hastane_Otomasyon
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(9, 350);
+            this.label9.Location = new System.Drawing.Point(15, 350);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(141, 20);
             this.label9.TabIndex = 42;
@@ -132,7 +132,7 @@ namespace Hastane_Otomasyon
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(45, 276);
+            this.label8.Location = new System.Drawing.Point(60, 276);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 20);
             this.label8.TabIndex = 41;
@@ -140,16 +140,17 @@ namespace Hastane_Otomasyon
             // 
             // dTPDOB
             // 
-            this.dTPDOB.Location = new System.Drawing.Point(172, 274);
+            this.dTPDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPDOB.Location = new System.Drawing.Point(185, 274);
             this.dTPDOB.Name = "dTPDOB";
-            this.dTPDOB.Size = new System.Drawing.Size(200, 22);
+            this.dTPDOB.Size = new System.Drawing.Size(162, 22);
             this.dTPDOB.TabIndex = 32;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(86, 240);
+            this.label7.Location = new System.Drawing.Point(103, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 20);
             this.label7.TabIndex = 40;
@@ -161,16 +162,16 @@ namespace Hastane_Otomasyon
             this.txtGender.Items.AddRange(new object[] {
             "Erkek",
             "Kadın"});
-            this.txtGender.Location = new System.Drawing.Point(172, 236);
+            this.txtGender.Location = new System.Drawing.Point(185, 236);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(93, 24);
+            this.txtGender.Size = new System.Drawing.Size(106, 24);
             this.txtGender.TabIndex = 29;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(99, 196);
+            this.label6.Location = new System.Drawing.Point(116, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 39;
@@ -178,24 +179,24 @@ namespace Hastane_Otomasyon
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(172, 194);
+            this.txtEmail.Location = new System.Drawing.Point(185, 194);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(149, 22);
+            this.txtEmail.Size = new System.Drawing.Size(162, 22);
             this.txtEmail.TabIndex = 28;
             // 
             // mskdTxtPhone
             // 
-            this.mskdTxtPhone.Location = new System.Drawing.Point(172, 156);
+            this.mskdTxtPhone.Location = new System.Drawing.Point(185, 156);
             this.mskdTxtPhone.Mask = "(999) 000-0000";
             this.mskdTxtPhone.Name = "mskdTxtPhone";
-            this.mskdTxtPhone.Size = new System.Drawing.Size(149, 22);
+            this.mskdTxtPhone.Size = new System.Drawing.Size(162, 22);
             this.mskdTxtPhone.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(30, 158);
+            this.label5.Location = new System.Drawing.Point(47, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 38;
@@ -203,7 +204,7 @@ namespace Hastane_Otomasyon
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(172, 390);
+            this.button4.Location = new System.Drawing.Point(185, 395);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 48);
             this.button4.TabIndex = 37;
@@ -213,9 +214,9 @@ namespace Hastane_Otomasyon
             // 
             // txtPw
             // 
-            this.txtPw.Location = new System.Drawing.Point(172, 315);
+            this.txtPw.Location = new System.Drawing.Point(185, 313);
             this.txtPw.Name = "txtPw";
-            this.txtPw.Size = new System.Drawing.Size(149, 22);
+            this.txtPw.Size = new System.Drawing.Size(162, 22);
             this.txtPw.TabIndex = 33;
             this.txtPw.UseSystemPasswordChar = true;
             // 
@@ -223,7 +224,7 @@ namespace Hastane_Otomasyon
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(67, 317);
+            this.label1.Location = new System.Drawing.Point(82, 315);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 36;
@@ -233,7 +234,7 @@ namespace Hastane_Otomasyon
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(60, 119);
+            this.label2.Location = new System.Drawing.Point(77, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 34;
@@ -242,24 +243,24 @@ namespace Hastane_Otomasyon
             // txtIdNo
             // 
             this.txtIdNo.Enabled = false;
-            this.txtIdNo.Location = new System.Drawing.Point(172, 117);
+            this.txtIdNo.Location = new System.Drawing.Point(185, 117);
             this.txtIdNo.MaxLength = 11;
             this.txtIdNo.Name = "txtIdNo";
-            this.txtIdNo.Size = new System.Drawing.Size(149, 22);
+            this.txtIdNo.Size = new System.Drawing.Size(162, 22);
             this.txtIdNo.TabIndex = 26;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(172, 78);
+            this.txtSurname.Location = new System.Drawing.Point(185, 78);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(149, 22);
+            this.txtSurname.Size = new System.Drawing.Size(162, 22);
             this.txtSurname.TabIndex = 25;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(74, 80);
+            this.label4.Location = new System.Drawing.Point(89, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 31;
@@ -269,7 +270,7 @@ namespace Hastane_Otomasyon
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(97, 40);
+            this.label3.Location = new System.Drawing.Point(114, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 30;
@@ -277,9 +278,9 @@ namespace Hastane_Otomasyon
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(172, 38);
+            this.txtName.Location = new System.Drawing.Point(185, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(149, 22);
+            this.txtName.Size = new System.Drawing.Size(162, 22);
             this.txtName.TabIndex = 24;
             // 
             // groupBox2
@@ -304,9 +305,9 @@ namespace Hastane_Otomasyon
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(434, 12);
+            this.groupBox2.Location = new System.Drawing.Point(424, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(649, 496);
+            this.groupBox2.Size = new System.Drawing.Size(729, 510);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Appointment";
@@ -318,7 +319,7 @@ namespace Hastane_Otomasyon
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(122, 91);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 24);
+            this.comboBox2.Size = new System.Drawing.Size(211, 24);
             this.comboBox2.TabIndex = 51;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
@@ -330,6 +331,7 @@ namespace Hastane_Otomasyon
             this.BtnDelete.TabIndex = 50;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnSave
             // 
@@ -352,10 +354,11 @@ namespace Hastane_Otomasyon
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(122, 140);
-            this.dateTimePicker1.MinDate = new System.DateTime(2021, 11, 10, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2021, 11, 11, 23, 22, 19, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(211, 22);
             this.dateTimePicker1.TabIndex = 47;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 11, 11, 23, 22, 19, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBox1
@@ -366,7 +369,7 @@ namespace Hastane_Otomasyon
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(122, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.Size = new System.Drawing.Size(211, 24);
             this.comboBox1.TabIndex = 45;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -423,9 +426,9 @@ namespace Hastane_Otomasyon
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.SpringGreen;
-            this.button17.Location = new System.Drawing.Point(511, 150);
+            this.button17.Location = new System.Drawing.Point(542, 195);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 33);
+            this.button17.Size = new System.Drawing.Size(91, 52);
             this.button17.TabIndex = 40;
             this.button17.Text = "17:00";
             this.button17.UseVisualStyleBackColor = false;
@@ -434,9 +437,9 @@ namespace Hastane_Otomasyon
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.SpringGreen;
-            this.button16.Location = new System.Drawing.Point(430, 151);
+            this.button16.Location = new System.Drawing.Point(430, 195);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 33);
+            this.button16.Size = new System.Drawing.Size(91, 52);
             this.button16.TabIndex = 39;
             this.button16.Text = "16:00";
             this.button16.UseVisualStyleBackColor = false;
@@ -445,9 +448,9 @@ namespace Hastane_Otomasyon
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.SpringGreen;
-            this.button15.Location = new System.Drawing.Point(511, 111);
+            this.button15.Location = new System.Drawing.Point(542, 137);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 33);
+            this.button15.Size = new System.Drawing.Size(91, 52);
             this.button15.TabIndex = 38;
             this.button15.Text = "15:00";
             this.button15.UseVisualStyleBackColor = false;
@@ -456,9 +459,9 @@ namespace Hastane_Otomasyon
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.SpringGreen;
-            this.button14.Location = new System.Drawing.Point(430, 112);
+            this.button14.Location = new System.Drawing.Point(430, 137);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 33);
+            this.button14.Size = new System.Drawing.Size(91, 52);
             this.button14.TabIndex = 37;
             this.button14.Text = "14:00";
             this.button14.UseVisualStyleBackColor = false;
@@ -467,9 +470,9 @@ namespace Hastane_Otomasyon
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.SpringGreen;
-            this.button13.Location = new System.Drawing.Point(511, 72);
+            this.button13.Location = new System.Drawing.Point(542, 79);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 33);
+            this.button13.Size = new System.Drawing.Size(91, 52);
             this.button13.TabIndex = 36;
             this.button13.Text = "13:00";
             this.button13.UseVisualStyleBackColor = false;
@@ -478,9 +481,9 @@ namespace Hastane_Otomasyon
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.SpringGreen;
-            this.button11.Location = new System.Drawing.Point(430, 72);
+            this.button11.Location = new System.Drawing.Point(430, 79);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 34);
+            this.button11.Size = new System.Drawing.Size(91, 52);
             this.button11.TabIndex = 34;
             this.button11.Text = "11:00";
             this.button11.UseVisualStyleBackColor = false;
@@ -489,9 +492,9 @@ namespace Hastane_Otomasyon
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.SpringGreen;
-            this.button10.Location = new System.Drawing.Point(511, 32);
+            this.button10.Location = new System.Drawing.Point(542, 21);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 34);
+            this.button10.Size = new System.Drawing.Size(91, 52);
             this.button10.TabIndex = 33;
             this.button10.Text = "10:00";
             this.button10.UseVisualStyleBackColor = false;
@@ -501,9 +504,9 @@ namespace Hastane_Otomasyon
             // 
             this.button9.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
             this.button9.BackColor = System.Drawing.Color.SpringGreen;
-            this.button9.Location = new System.Drawing.Point(430, 32);
+            this.button9.Location = new System.Drawing.Point(430, 21);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 34);
+            this.button9.Size = new System.Drawing.Size(91, 52);
             this.button9.TabIndex = 32;
             this.button9.Text = "09:00";
             this.button9.UseVisualStyleBackColor = false;
@@ -521,6 +524,7 @@ namespace Hastane_Otomasyon
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
@@ -533,7 +537,7 @@ namespace Hastane_Otomasyon
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(637, 164);
+            this.dataGridView1.Size = new System.Drawing.Size(707, 178);
             this.dataGridView1.TabIndex = 2;
             // 
             // departmentTableAdapter
@@ -546,7 +550,7 @@ namespace Hastane_Otomasyon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1095, 520);
+            this.ClientSize = new System.Drawing.Size(1165, 534);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
