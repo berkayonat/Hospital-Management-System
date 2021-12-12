@@ -64,6 +64,18 @@
     <Compile Include="FrmPatientRegistration.Designer.cs">
       <DependentUpon>FrmPatientRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPhysicianLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhysicianLogin.Designer.cs">
+      <DependentUpon>FrmPhysicianLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPhysicianPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhysicianPanel.Designer.cs">
+      <DependentUpon>FrmPhysicianPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="HastaneOtomasyonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +91,9 @@
     </Compile>
     <Compile Include="FrmPatientPanel.Designer.cs">
       <DependentUpon>FrmPatientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaneOtomasyonDataSet2.cs">
+      <DependentUpon>HastaneOtomasyonDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="HastaneOtomasyonDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatientPanel.resx">
       <DependentUpon>FrmPatientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhysicianLogin.resx">
+      <DependentUpon>FrmPhysicianLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhysicianPanel.resx">
+      <DependentUpon>FrmPhysicianPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

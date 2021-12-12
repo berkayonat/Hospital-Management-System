@@ -26,7 +26,8 @@ namespace Hastane_Otomasyon
 
         private void btnDoktorGiris_Click(object sender, EventArgs e)
         {
-
+            FrmPhysicianLogin fr = new FrmPhysicianLogin();
+            fr.Show();
         }
     }
 }

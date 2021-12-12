@@ -45,7 +45,6 @@ namespace Hastane_Otomasyon
             this.txtPw = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIdNo = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@ namespace Hastane_Otomasyon
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.departmentTableAdapter = new Hastane_Otomasyon.HastaneOtomasyonDataSet2TableAdapters.DepartmentTableAdapter();
+            this.lblIdNo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -83,6 +83,7 @@ namespace Hastane_Otomasyon
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblIdNo);
             this.groupBox1.Controls.Add(this.txtRPw);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -97,7 +98,6 @@ namespace Hastane_Otomasyon
             this.groupBox1.Controls.Add(this.txtPw);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtIdNo);
             this.groupBox1.Controls.Add(this.txtSurname);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -107,7 +107,7 @@ namespace Hastane_Otomasyon
             this.groupBox1.Size = new System.Drawing.Size(406, 510);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Patient İnformation";
+            this.groupBox1.Text = "Patient Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtRPw
@@ -240,15 +240,6 @@ namespace Hastane_Otomasyon
             this.label2.TabIndex = 34;
             this.label2.Text = "ID Number";
             // 
-            // txtIdNo
-            // 
-            this.txtIdNo.Enabled = false;
-            this.txtIdNo.Location = new System.Drawing.Point(185, 117);
-            this.txtIdNo.MaxLength = 11;
-            this.txtIdNo.Name = "txtIdNo";
-            this.txtIdNo.Size = new System.Drawing.Size(162, 22);
-            this.txtIdNo.TabIndex = 26;
-            // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(185, 78);
@@ -307,7 +298,7 @@ namespace Hastane_Otomasyon
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(424, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(729, 510);
+            this.groupBox2.Size = new System.Drawing.Size(759, 510);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Appointment";
@@ -426,7 +417,7 @@ namespace Hastane_Otomasyon
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.SpringGreen;
-            this.button17.Location = new System.Drawing.Point(542, 195);
+            this.button17.Location = new System.Drawing.Point(587, 208);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(91, 52);
             this.button17.TabIndex = 40;
@@ -437,7 +428,7 @@ namespace Hastane_Otomasyon
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.SpringGreen;
-            this.button16.Location = new System.Drawing.Point(430, 195);
+            this.button16.Location = new System.Drawing.Point(469, 208);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(91, 52);
             this.button16.TabIndex = 39;
@@ -448,7 +439,7 @@ namespace Hastane_Otomasyon
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.SpringGreen;
-            this.button15.Location = new System.Drawing.Point(542, 137);
+            this.button15.Location = new System.Drawing.Point(587, 150);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(91, 52);
             this.button15.TabIndex = 38;
@@ -459,7 +450,7 @@ namespace Hastane_Otomasyon
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.SpringGreen;
-            this.button14.Location = new System.Drawing.Point(430, 137);
+            this.button14.Location = new System.Drawing.Point(469, 150);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(91, 52);
             this.button14.TabIndex = 37;
@@ -470,7 +461,7 @@ namespace Hastane_Otomasyon
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.SpringGreen;
-            this.button13.Location = new System.Drawing.Point(542, 79);
+            this.button13.Location = new System.Drawing.Point(587, 92);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(91, 52);
             this.button13.TabIndex = 36;
@@ -481,7 +472,7 @@ namespace Hastane_Otomasyon
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.SpringGreen;
-            this.button11.Location = new System.Drawing.Point(430, 79);
+            this.button11.Location = new System.Drawing.Point(469, 92);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(91, 52);
             this.button11.TabIndex = 34;
@@ -492,7 +483,7 @@ namespace Hastane_Otomasyon
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.SpringGreen;
-            this.button10.Location = new System.Drawing.Point(542, 21);
+            this.button10.Location = new System.Drawing.Point(587, 34);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(91, 52);
             this.button10.TabIndex = 33;
@@ -504,7 +495,7 @@ namespace Hastane_Otomasyon
             // 
             this.button9.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
             this.button9.BackColor = System.Drawing.Color.SpringGreen;
-            this.button9.Location = new System.Drawing.Point(430, 21);
+            this.button9.Location = new System.Drawing.Point(469, 34);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(91, 52);
             this.button9.TabIndex = 32;
@@ -537,12 +528,22 @@ namespace Hastane_Otomasyon
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(707, 178);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 178);
             this.dataGridView1.TabIndex = 2;
             // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblIdNo
+            // 
+            this.lblIdNo.AutoSize = true;
+            this.lblIdNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblIdNo.Location = new System.Drawing.Point(181, 119);
+            this.lblIdNo.Name = "lblIdNo";
+            this.lblIdNo.Size = new System.Drawing.Size(24, 20);
+            this.lblIdNo.TabIndex = 43;
+            this.lblIdNo.Text = "   ";
             // 
             // FrmPatientPanel
             // 
@@ -550,7 +551,7 @@ namespace Hastane_Otomasyon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1165, 534);
+            this.ClientSize = new System.Drawing.Size(1195, 534);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -611,10 +612,10 @@ namespace Hastane_Otomasyon
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnDelete;
-        public System.Windows.Forms.TextBox txtIdNo;
         private HastaneOtomasyonDataSet2 hastaneOtomasyonDataSet2;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private HastaneOtomasyonDataSet2TableAdapters.DepartmentTableAdapter departmentTableAdapter;
         private System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label lblIdNo;
     }
 }

@@ -25,23 +25,35 @@ namespace Hastane_Otomasyon
             if (txtPw.Text != "" && txtIdNo.Text != "")
             {
             
-            if (txtPw.Text == txtRPw.Text)
-            {
+                if (txtPw.Text == txtRPw.Text)
+                    {
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "'", conn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    conn.Close();
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("There is a user with this ID number.");
+                    }
+                    else
+                    {
 
 
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into PatientRegistration (Name,Surname,IdNumber,PhoneNumber,Email,Gender,DateOfBirth,Password) values('" + txtName.Text + "','" + txtSurname.Text + "','" + txtIdNo.Text + "','" + mskdTxtPhone.Text + "','" + txtEmail.Text + "','" + txtGender.Text + "','" + dTPDOB.Value.ToString("yyyy-MM-dd") + "','" + txtPw.Text + "')", conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Registration Successful");
-                this.Hide();
-                FrmPatientLogin fr = new FrmPatientLogin();
-                fr.Show();
-            } 
-            else
-            {
-                MessageBox.Show("Passwords do not match !");
-            }
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("insert into PatientRegistration (Name,Surname,IdNumber,PhoneNumber,Email,Gender,DateOfBirth,Password) values('" + txtName.Text + "','" + txtSurname.Text + "','" + txtIdNo.Text + "','" + mskdTxtPhone.Text + "','" + txtEmail.Text + "','" + txtGender.Text + "','" + dTPDOB.Value.ToString("yyyy-MM-dd") + "','" + txtPw.Text + "')", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Registration Successful");
+                        this.Hide();
+                        FrmPatientLogin fr = new FrmPatientLogin();
+                        fr.Show();
+                    }
+                } 
+                else
+                {
+                    MessageBox.Show("Passwords do not match !");
+                }
             
             }
             else

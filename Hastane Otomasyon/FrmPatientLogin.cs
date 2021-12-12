@@ -28,15 +28,16 @@ namespace Hastane_Otomasyon
         
         private void btnHastaGiris_Click(object sender, EventArgs e)
         {
-            FrmPatientPanel frm = new FrmPatientPanel();
-            frm.txtIdNo.Text = txtIdNo.Text;
+            
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-CD8COQV;Initial Catalog=HastaneOtomasyon;Integrated Security=True");
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT IdNumber,Password FROM PatientRegistration WHERE IdNumber='" + txtIdNo.Text + "' AND Password='" + txtPw.Text + "'", con);
             DataTable dt = new DataTable(); 
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
-            {              
+            {
+                FrmPatientPanel frm = new FrmPatientPanel();
+                frm.lblIdNo.Text = txtIdNo.Text;
                 this.Hide();                
                 frm.Show();               
             }

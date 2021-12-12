@@ -134,7 +134,7 @@ namespace Hastane_Otomasyon
         void AppointmentList()
         {
             con.Open();
-            SqlDataAdapter sda17 = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,PHY.Name AS Physician,D.DepartmentName AS Department FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join Physician PHY ON A.PhysicianId=PHY.PhysicianId join Department D ON PHY.DepartmentId=D.DepartmentId WHERE A.Date >= GETDATE() AND A.PatientId=(SELECT PatientId FROM PatientRegistration WHERE IdNumber='" + txtIdNo.Text + "')ORDER BY A.Date ASC", con);
+            SqlDataAdapter sda17 = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,PHY.Name AS Physician,D.DepartmentName AS Department FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join Physician PHY ON A.PhysicianId=PHY.PhysicianId join Department D ON PHY.DepartmentId=D.DepartmentId WHERE A.Date >= DATEADD(DAY, -1, GETDATE()) AND A.PatientId=(SELECT PatientId FROM PatientRegistration WHERE IdNumber='" + lblIdNo.Text + "')ORDER BY A.Date ASC", con);
             DataTable dt17 = new DataTable();
             sda17.Fill(dt17);
             dataGridView1.DataSource = dt17;
@@ -148,7 +148,7 @@ namespace Hastane_Otomasyon
             this.departmentTableAdapter.Fill(this.hastaneOtomasyonDataSet2.Department);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM PatientRegistration WHERE IdNumber = '" + lblIdNo.Text + "'", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -178,13 +178,13 @@ namespace Hastane_Otomasyon
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (txtPw.Text != "" && txtIdNo.Text != "")
+            if (txtPw.Text != "" && lblIdNo.Text != "")
             {
 
                 if (txtPw.Text == txtRPw.Text)
                 {
                     con.Open();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE PatientRegistration set Name='" + txtName.Text + "',Surname='" + txtSurname.Text + "',PhoneNumber='" + mskdTxtPhone.Text + "',Email='" + txtEmail.Text + "',Gender='" + txtGender.Text + "',DateOfBirth='" + dTPDOB.Value.ToString("yyyy-MM-dd") + "',Password='" + txtPw.Text + "' where IdNumber='" + txtIdNo.Text + "'", con);
+                    SqlCommand cmd2 = new SqlCommand("UPDATE PatientRegistration set Name='" + txtName.Text + "',Surname='" + txtSurname.Text + "',PhoneNumber='" + mskdTxtPhone.Text + "',Email='" + txtEmail.Text + "',Gender='" + txtGender.Text + "',DateOfBirth='" + dTPDOB.Value.ToString("yyyy-MM-dd") + "',Password='" + txtPw.Text + "' where IdNumber='" + lblIdNo.Text + "'", con);
                     cmd2.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Registration updated");
@@ -269,7 +269,7 @@ namespace Hastane_Otomasyon
             if (comboBox1.Text != "" && comboBox2.Text != "" && dateTimePicker1.Text != "" && txtTime.Text != "")
             {
                 con.Open();
-                SqlDataAdapter sda18 = new SqlDataAdapter("SELECT * FROM Appointment WHERE Date='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + txtTime.Text + "') AND PatientId = (SELECT PatientId FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "') ", con);
+                SqlDataAdapter sda18 = new SqlDataAdapter("SELECT * FROM Appointment WHERE Date='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'AND TimeId = (SELECT TimeId FROM AppointmentTime WHERE Time = '" + txtTime.Text + "') AND PatientId = (SELECT PatientId FROM PatientRegistration WHERE IdNumber = '" + lblIdNo.Text + "') ", con);
                 DataTable dt18 = new DataTable();
                 sda18.Fill(dt18);
                 if (dt18.Rows.Count > 0)
@@ -279,7 +279,7 @@ namespace Hastane_Otomasyon
                 else
                 {
                     
-                    SqlCommand cmd4 = new SqlCommand("insert into Appointment (Date,TimeId,PatientId,PhysicianId) values('" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',(SELECT TimeId FROM AppointmentTime WHERE Time = '" + txtTime.Text + "'),(SELECT PatientId FROM PatientRegistration WHERE IdNumber = '" + txtIdNo.Text + "'),(SELECT PhysicianId FROM Physician WHERE Name = '" + comboBox2.Text + "'))", con);
+                    SqlCommand cmd4 = new SqlCommand("insert into Appointment (Date,TimeId,PatientId,PhysicianId) values('" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',(SELECT TimeId FROM AppointmentTime WHERE Time = '" + txtTime.Text + "'),(SELECT PatientId FROM PatientRegistration WHERE IdNumber = '" + lblIdNo.Text + "'),(SELECT PhysicianId FROM Physician WHERE Name = '" + comboBox2.Text + "'))", con);
                     cmd4.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Appointment created");
