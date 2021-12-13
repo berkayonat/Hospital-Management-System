@@ -23,7 +23,7 @@ namespace Hastane_Otomasyon
         void AppointmentList()
         {
             con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,P.Name AS PatientName FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join PatientRegistration P ON A.PhysicianId=P.PatientId WHERE A.Date >= DATEADD(DAY, -1, GETDATE()) AND A.PhysicianId=(SELECT PhysicianId FROM Physician WHERE IdNumber='" + lblIdNo.Text + "')ORDER BY A.Date,AT.Time ASC", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,P.IdNumber,P.Name,P.Surname FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join PatientRegistration P ON A.PatientId=P.PatientId WHERE A.Date >= DATEADD(DAY, -1, GETDATE()) AND A.PhysicianId=(SELECT PhysicianId FROM Physician WHERE IdNumber='" + lblIdNo.Text + "')ORDER BY A.Date,AT.Time ASC", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -58,10 +58,12 @@ namespace Hastane_Otomasyon
                 if (txtPw.Text == txtRPw.Text)
                 {
                     con.Open();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE Physician set Password='" + txtPw.Text + "' where IdNumber='" + lblIdNo.Text + "'", con);
-                    cmd2.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("UPDATE Physician set Password='" + txtPw.Text + "' where IdNumber='" + lblIdNo.Text + "'", con);
+                    cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Password updated");
+                    txtPw.Text = "";
+                    txtRPw.Text = "";
                 }
                 else
                 {
@@ -89,6 +91,20 @@ namespace Hastane_Otomasyon
             else
             {
                 MessageBox.Show("Please select a valid appointment from the table below !");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT A.AppointmentId,A.Date,AT.Time,P.IdNumber,P.Name,P.Surname FROM Appointment A join AppointmentTime AT ON A.TimeId=AT.TimeId join PatientRegistration P ON A.PatientId=P.PatientId WHERE A.Date >= DATEADD(DAY, -1, GETDATE()) AND A.PhysicianId=(SELECT PhysicianId FROM Physician WHERE IdNumber='" + lblIdNo.Text + "') AND (P.Name like '%"+txtSearch.Text+ "%' OR P.IdNumber like '%" + txtSearch.Text + "%') ORDER BY A.Date,AT.Time ASC", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+            if (txtSearch.Text == "")
+            {
+                AppointmentList();
             }
         }
     }
