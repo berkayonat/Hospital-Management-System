@@ -29,5 +29,11 @@ namespace Hastane_Otomasyon
             FrmPhysicianLogin fr = new FrmPhysicianLogin();
             fr.Show();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FrmAdminLogin fr = new FrmAdminLogin();
+            fr.Show();
+        }
     }
 }

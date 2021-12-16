@@ -31,6 +31,7 @@ namespace Hastane_Otomasyon
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblIdNo = new System.Windows.Forms.Label();
             this.txtRPw = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@ namespace Hastane_Otomasyon
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.departmentTableAdapter = new Hastane_Otomasyon.HastaneOtomasyonDataSet2TableAdapters.DepartmentTableAdapter();
-            this.lblIdNo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -109,6 +109,16 @@ namespace Hastane_Otomasyon
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblIdNo
+            // 
+            this.lblIdNo.AutoSize = true;
+            this.lblIdNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblIdNo.Location = new System.Drawing.Point(181, 119);
+            this.lblIdNo.Name = "lblIdNo";
+            this.lblIdNo.Size = new System.Drawing.Size(24, 20);
+            this.lblIdNo.TabIndex = 43;
+            this.lblIdNo.Text = "   ";
             // 
             // txtRPw
             // 
@@ -158,6 +168,7 @@ namespace Hastane_Otomasyon
             // 
             // txtGender
             // 
+            this.txtGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtGender.FormattingEnabled = true;
             this.txtGender.Items.AddRange(new object[] {
             "Erkek",
@@ -534,16 +545,6 @@ namespace Hastane_Otomasyon
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // lblIdNo
-            // 
-            this.lblIdNo.AutoSize = true;
-            this.lblIdNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblIdNo.Location = new System.Drawing.Point(181, 119);
-            this.lblIdNo.Name = "lblIdNo";
-            this.lblIdNo.Size = new System.Drawing.Size(24, 20);
-            this.lblIdNo.TabIndex = 43;
-            this.lblIdNo.Text = "   ";
             // 
             // FrmPatientPanel
             // 

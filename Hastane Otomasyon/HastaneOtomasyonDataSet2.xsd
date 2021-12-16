@@ -201,7 +201,16 @@ SELECT DepartmentId, DepartmentName FROM Department WHERE (DepartmentId = @Depar
               <Mapping SourceColumn="DepartmentId" DataSetColumn="DepartmentId" />
               <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="HastaneOtomasyonConnectionString (Settings)" DbObjectName="HastaneOtomasyon.dbo.Department" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DepartmentId, DepartmentName FROM dbo.Department</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PatientRegistrationTableAdapter" GeneratorDataComponentClassName="PatientRegistrationTableAdapter" Name="PatientRegistration" UserDataComponentName="PatientRegistrationTableAdapter">
             <MainSource>
@@ -400,7 +409,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
   <xs:element name="HastaneOtomasyonDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HastaneOtomasyonDataSet2" msprop:Generator_UserDSName="HastaneOtomasyonDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AdminLogin" msprop:Generator_TableClassName="AdminLoginDataTable" msprop:Generator_TableVarName="tableAdminLogin" msprop:Generator_TablePropName="AdminLogin" msprop:Generator_RowDeletingName="AdminLoginRowDeleting" msprop:Generator_RowChangingName="AdminLoginRowChanging" msprop:Generator_RowEvHandlerName="AdminLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminLoginRowDeleted" msprop:Generator_UserTableName="AdminLogin" msprop:Generator_RowChangedName="AdminLoginRowChanged" msprop:Generator_RowEvArgName="AdminLoginRowChangeEvent" msprop:Generator_RowClassName="AdminLoginRow">
+        <xs:element name="AdminLogin" msprop:Generator_TableClassName="AdminLoginDataTable" msprop:Generator_TableVarName="tableAdminLogin" msprop:Generator_RowChangedName="AdminLoginRowChanged" msprop:Generator_TablePropName="AdminLogin" msprop:Generator_RowDeletingName="AdminLoginRowDeleting" msprop:Generator_RowChangingName="AdminLoginRowChanging" msprop:Generator_RowEvHandlerName="AdminLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminLoginRowDeleted" msprop:Generator_RowClassName="AdminLoginRow" msprop:Generator_UserTableName="AdminLogin" msprop:Generator_RowEvArgName="AdminLoginRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -421,7 +430,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Appointment" msprop:Generator_TableClassName="AppointmentDataTable" msprop:Generator_TableVarName="tableAppointment" msprop:Generator_TablePropName="Appointment" msprop:Generator_RowDeletingName="AppointmentRowDeleting" msprop:Generator_RowChangingName="AppointmentRowChanging" msprop:Generator_RowEvHandlerName="AppointmentRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentRowDeleted" msprop:Generator_UserTableName="Appointment" msprop:Generator_RowChangedName="AppointmentRowChanged" msprop:Generator_RowEvArgName="AppointmentRowChangeEvent" msprop:Generator_RowClassName="AppointmentRow">
+        <xs:element name="Appointment" msprop:Generator_TableClassName="AppointmentDataTable" msprop:Generator_TableVarName="tableAppointment" msprop:Generator_RowChangedName="AppointmentRowChanged" msprop:Generator_TablePropName="Appointment" msprop:Generator_RowDeletingName="AppointmentRowDeleting" msprop:Generator_RowChangingName="AppointmentRowChanging" msprop:Generator_RowEvHandlerName="AppointmentRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentRowDeleted" msprop:Generator_RowClassName="AppointmentRow" msprop:Generator_UserTableName="Appointment" msprop:Generator_RowEvArgName="AppointmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AppointmentId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAppointmentId" msprop:Generator_ColumnPropNameInRow="AppointmentId" msprop:Generator_ColumnPropNameInTable="AppointmentIdColumn" msprop:Generator_UserColumnName="AppointmentId" type="xs:int" />
@@ -432,7 +441,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AppointmentTime" msprop:Generator_TableClassName="AppointmentTimeDataTable" msprop:Generator_TableVarName="tableAppointmentTime" msprop:Generator_TablePropName="AppointmentTime" msprop:Generator_RowDeletingName="AppointmentTimeRowDeleting" msprop:Generator_RowChangingName="AppointmentTimeRowChanging" msprop:Generator_RowEvHandlerName="AppointmentTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentTimeRowDeleted" msprop:Generator_UserTableName="AppointmentTime" msprop:Generator_RowChangedName="AppointmentTimeRowChanged" msprop:Generator_RowEvArgName="AppointmentTimeRowChangeEvent" msprop:Generator_RowClassName="AppointmentTimeRow">
+        <xs:element name="AppointmentTime" msprop:Generator_TableClassName="AppointmentTimeDataTable" msprop:Generator_TableVarName="tableAppointmentTime" msprop:Generator_RowChangedName="AppointmentTimeRowChanged" msprop:Generator_TablePropName="AppointmentTime" msprop:Generator_RowDeletingName="AppointmentTimeRowDeleting" msprop:Generator_RowChangingName="AppointmentTimeRowChanging" msprop:Generator_RowEvHandlerName="AppointmentTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentTimeRowDeleted" msprop:Generator_RowClassName="AppointmentTimeRow" msprop:Generator_UserTableName="AppointmentTime" msprop:Generator_RowEvArgName="AppointmentTimeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TimeId" msprop:Generator_ColumnVarNameInTable="columnTimeId" msprop:Generator_ColumnPropNameInRow="TimeId" msprop:Generator_ColumnPropNameInTable="TimeIdColumn" msprop:Generator_UserColumnName="TimeId" type="xs:unsignedByte" />
@@ -440,7 +449,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Department" msprop:Generator_TableClassName="DepartmentDataTable" msprop:Generator_TableVarName="tableDepartment" msprop:Generator_TablePropName="Department" msprop:Generator_RowDeletingName="DepartmentRowDeleting" msprop:Generator_RowChangingName="DepartmentRowChanging" msprop:Generator_RowEvHandlerName="DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentRowDeleted" msprop:Generator_UserTableName="Department" msprop:Generator_RowChangedName="DepartmentRowChanged" msprop:Generator_RowEvArgName="DepartmentRowChangeEvent" msprop:Generator_RowClassName="DepartmentRow">
+        <xs:element name="Department" msprop:Generator_TableClassName="DepartmentDataTable" msprop:Generator_TableVarName="tableDepartment" msprop:Generator_RowChangedName="DepartmentRowChanged" msprop:Generator_TablePropName="Department" msprop:Generator_RowDeletingName="DepartmentRowDeleting" msprop:Generator_RowChangingName="DepartmentRowChanging" msprop:Generator_RowEvHandlerName="DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentRowDeleted" msprop:Generator_RowClassName="DepartmentRow" msprop:Generator_UserTableName="Department" msprop:Generator_RowEvArgName="DepartmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DepartmentId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDepartmentId" msprop:Generator_ColumnPropNameInRow="DepartmentId" msprop:Generator_ColumnPropNameInTable="DepartmentIdColumn" msprop:Generator_UserColumnName="DepartmentId" type="xs:int" />
@@ -454,7 +463,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PatientRegistration" msprop:Generator_TableClassName="PatientRegistrationDataTable" msprop:Generator_TableVarName="tablePatientRegistration" msprop:Generator_TablePropName="PatientRegistration" msprop:Generator_RowDeletingName="PatientRegistrationRowDeleting" msprop:Generator_RowChangingName="PatientRegistrationRowChanging" msprop:Generator_RowEvHandlerName="PatientRegistrationRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientRegistrationRowDeleted" msprop:Generator_UserTableName="PatientRegistration" msprop:Generator_RowChangedName="PatientRegistrationRowChanged" msprop:Generator_RowEvArgName="PatientRegistrationRowChangeEvent" msprop:Generator_RowClassName="PatientRegistrationRow">
+        <xs:element name="PatientRegistration" msprop:Generator_TableClassName="PatientRegistrationDataTable" msprop:Generator_TableVarName="tablePatientRegistration" msprop:Generator_RowChangedName="PatientRegistrationRowChanged" msprop:Generator_TablePropName="PatientRegistration" msprop:Generator_RowDeletingName="PatientRegistrationRowDeleting" msprop:Generator_RowChangingName="PatientRegistrationRowChanging" msprop:Generator_RowEvHandlerName="PatientRegistrationRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientRegistrationRowDeleted" msprop:Generator_RowClassName="PatientRegistrationRow" msprop:Generator_UserTableName="PatientRegistration" msprop:Generator_RowEvArgName="PatientRegistrationRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PatientId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPatientId" msprop:Generator_ColumnPropNameInRow="PatientId" msprop:Generator_ColumnPropNameInTable="PatientIdColumn" msprop:Generator_UserColumnName="PatientId" type="xs:int" />
@@ -511,7 +520,7 @@ SELECT PhysicianId, Name, IdNumber, PhoneNumber, Email, Gender, DateOfBirth, Dep
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Physician" msprop:Generator_TableClassName="PhysicianDataTable" msprop:Generator_TableVarName="tablePhysician" msprop:Generator_TablePropName="Physician" msprop:Generator_RowDeletingName="PhysicianRowDeleting" msprop:Generator_RowChangingName="PhysicianRowChanging" msprop:Generator_RowEvHandlerName="PhysicianRowChangeEventHandler" msprop:Generator_RowDeletedName="PhysicianRowDeleted" msprop:Generator_UserTableName="Physician" msprop:Generator_RowChangedName="PhysicianRowChanged" msprop:Generator_RowEvArgName="PhysicianRowChangeEvent" msprop:Generator_RowClassName="PhysicianRow">
+        <xs:element name="Physician" msprop:Generator_TableClassName="PhysicianDataTable" msprop:Generator_TableVarName="tablePhysician" msprop:Generator_RowChangedName="PhysicianRowChanged" msprop:Generator_TablePropName="Physician" msprop:Generator_RowDeletingName="PhysicianRowDeleting" msprop:Generator_RowChangingName="PhysicianRowChanging" msprop:Generator_RowEvHandlerName="PhysicianRowChangeEventHandler" msprop:Generator_RowDeletedName="PhysicianRowDeleted" msprop:Generator_RowClassName="PhysicianRow" msprop:Generator_UserTableName="Physician" msprop:Generator_RowEvArgName="PhysicianRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PhysicianId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPhysicianId" msprop:Generator_ColumnPropNameInRow="PhysicianId" msprop:Generator_ColumnPropNameInTable="PhysicianIdColumn" msprop:Generator_UserColumnName="PhysicianId" type="xs:int" />

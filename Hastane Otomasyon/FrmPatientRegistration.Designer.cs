@@ -168,6 +168,7 @@ namespace Hastane_Otomasyon
             // 
             // txtGender
             // 
+            this.txtGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtGender.FormattingEnabled = true;
             this.txtGender.Items.AddRange(new object[] {
             "Erkek",

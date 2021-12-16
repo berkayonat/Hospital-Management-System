@@ -58,7 +58,7 @@ namespace Hastane_Otomasyon
             }
             else
             {
-                MessageBox.Show("Please enter password and ID number !");
+                MessageBox.Show("Please fill password and ID number fields !");
 
             }
         }

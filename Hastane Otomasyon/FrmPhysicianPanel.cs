@@ -79,18 +79,25 @@ namespace Hastane_Otomasyon
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            DialogResult Secim = new DialogResult();
+
+            Secim = MessageBox.Show("Do you confirm the deletion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (Secim == DialogResult.Yes)
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("delete from Appointment where AppointmentId = '" + dataGridView1.CurrentRow.Cells["AppointmentId"].Value.ToString() + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Appointment Deleted !");               
-                AppointmentList();
-            }
-            else
-            {
-                MessageBox.Show("Please select a valid appointment from the table below !");
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("delete from Appointment where AppointmentId = '" + dataGridView1.CurrentRow.Cells["AppointmentId"].Value.ToString() + "'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Appointment Deleted !");
+                    AppointmentList();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a valid appointment from the table below !");
+                }
             }
         }
 

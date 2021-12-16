@@ -1,6 +1,8 @@
-﻿namespace Hastane_Otomasyon {
-    
-    
-    public partial class HastaneOtomasyonDataSet2 {
+﻿namespace Hastane_Otomasyon
+{
+
+
+    public partial class HastaneOtomasyonDataSet2
+    {
     }
 }
