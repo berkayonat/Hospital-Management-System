@@ -38,7 +38,15 @@ namespace Hastane_Otomasyon
             dataGridView2.DataSource = dt;
             con.Close();
         }
-
+        void PatientList()
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM PatientRegistration", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView4.DataSource = dt;
+            con.Close();
+        }
         void PhysicianList()
         {
             con.Open();
@@ -60,10 +68,13 @@ namespace Hastane_Otomasyon
 
         private void FrmAdminPanel_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hastaneOtomasyonDataSet2.PatientRegistration' table. You can move, or remove it, as needed.
+            
 
             this.departmentTableAdapter.Fill(this.hastaneOtomasyonDataSet2.Department);
             PhysicianList();
             DepartmentList();
+            PatientList();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -81,7 +92,7 @@ namespace Hastane_Otomasyon
             dTPDOB.Text = dataGridView1.CurrentRow.Cells["DateOfBirth"].Value.ToString();
             txtPw.Text = dataGridView1.CurrentRow.Cells["Password"].Value.ToString();
 
-            txtDepartment.Text = "";
+            
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT DepartmentName FROM Department WHERE DepartmentId =  '" + dataGridView1.CurrentRow.Cells["DepartmentId"].Value.ToString() + "'", con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -92,18 +103,7 @@ namespace Hastane_Otomasyon
             con.Close();
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.departmentTableAdapter.FillBy(this.hastaneOtomasyonDataSet2.Department);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+        
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -285,6 +285,47 @@ namespace Hastane_Otomasyon
         {
             txtDpName.Text = dataGridView3.CurrentRow.Cells["DepartmentName"].Value.ToString();
             txtDpId.Text = dataGridView3.CurrentRow.Cells["DepartmentId"].Value.ToString();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM PatientRegistration WHERE  Name like '%" + txtSearch.Text + "%' OR IdNumber like '%" + txtSearch.Text + "%'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView4.DataSource = dt;
+            con.Close();
+            if (txtSearch.Text == "")
+            {
+                PatientList();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtAdmPw.Text != "" && txtAdmRPw.Text != "" && txtAdminUsername.Text != "")
+            {
+
+                if (txtAdmPw.Text == txtAdmRPw.Text)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE AdminLogin set Password='" + txtAdmPw.Text + "' where Username='" + txtAdminUsername.Text + "'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Record updated");
+                    txtAdmPw.Text = "";
+                    txtAdmRPw.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Passwords do not match !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill password and username fields !");
+
+            }
         }
     }
 }

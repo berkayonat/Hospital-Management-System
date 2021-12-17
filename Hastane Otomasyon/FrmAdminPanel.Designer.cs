@@ -65,14 +65,29 @@ namespace Hastane_Otomasyon
             this.mskdTxtPhone = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtDpName = new System.Windows.Forms.TextBox();
+            this.txtDpId = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtDpId = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtDpName = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.departmentTableAdapter = new Hastane_Otomasyon.HastaneOtomasyonDataSet2TableAdapters.DepartmentTableAdapter();
+            this.hastaneOtomasyonDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtAdminUsername = new System.Windows.Forms.TextBox();
+            this.txtAdmRPw = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAdmPw = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -80,6 +95,11 @@ namespace Hastane_Otomasyon
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hastaneOtomasyonDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -116,7 +136,7 @@ namespace Hastane_Otomasyon
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.mskdTxtPhone);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(0, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(692, 697);
             this.groupBox1.TabIndex = 0;
@@ -214,7 +234,7 @@ namespace Hastane_Otomasyon
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.departmentBindingSource;
+            this.comboBox1.DataSource = this.departmentBindingSource1;
             this.comboBox1.DisplayMember = "DepartmentName";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
@@ -462,48 +482,30 @@ namespace Hastane_Otomasyon
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.txtDpName);
             this.groupBox2.Controls.Add(this.dataGridView3);
-            this.groupBox2.Location = new System.Drawing.Point(698, 12);
+            this.groupBox2.Location = new System.Drawing.Point(710, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(684, 200);
+            this.groupBox2.Size = new System.Drawing.Size(686, 200);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Department";
             // 
-            // dataGridView3
+            // txtDpId
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(290, 173);
-            this.dataGridView3.TabIndex = 2;
-            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
+            this.txtDpId.Enabled = false;
+            this.txtDpId.Location = new System.Drawing.Point(471, 68);
+            this.txtDpId.Name = "txtDpId";
+            this.txtDpId.Size = new System.Drawing.Size(162, 22);
+            this.txtDpId.TabIndex = 70;
             // 
-            // label14
+            // label15
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(319, 27);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 20);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Department Name";
-            // 
-            // txtDpName
-            // 
-            this.txtDpName.Location = new System.Drawing.Point(471, 27);
-            this.txtDpName.Name = "txtDpName";
-            this.txtDpName.Size = new System.Drawing.Size(162, 22);
-            this.txtDpName.TabIndex = 50;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(346, 69);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(119, 20);
+            this.label15.TabIndex = 69;
+            this.label15.Text = "Department ID";
             // 
             // button2
             // 
@@ -525,34 +527,191 @@ namespace Hastane_Otomasyon
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label15
+            // label14
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(346, 69);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(119, 20);
-            this.label15.TabIndex = 69;
-            this.label15.Text = "Department ID";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(319, 27);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(146, 20);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "Department Name";
             // 
-            // txtDpId
+            // txtDpName
             // 
-            this.txtDpId.Enabled = false;
-            this.txtDpId.Location = new System.Drawing.Point(471, 68);
-            this.txtDpId.Name = "txtDpId";
-            this.txtDpId.Size = new System.Drawing.Size(162, 22);
-            this.txtDpId.TabIndex = 70;
+            this.txtDpName.Location = new System.Drawing.Point(471, 27);
+            this.txtDpName.Name = "txtDpName";
+            this.txtDpName.Size = new System.Drawing.Size(162, 22);
+            this.txtDpName.TabIndex = 50;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 21);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(296, 173);
+            this.dataGridView3.TabIndex = 2;
+            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // hastaneOtomasyonDataSet2BindingSource
+            // 
+            this.hastaneOtomasyonDataSet2BindingSource.DataSource = this.hastaneOtomasyonDataSet2;
+            this.hastaneOtomasyonDataSet2BindingSource.Position = 0;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "Department";
+            this.departmentBindingSource1.DataSource = this.hastaneOtomasyonDataSet2BindingSource;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 47);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(674, 155);
+            this.dataGridView4.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtSearch);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.dataGridView4);
+            this.groupBox3.Location = new System.Drawing.Point(710, 218);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(686, 222);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Patient";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(488, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(192, 22);
+            this.txtSearch.TabIndex = 50;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(420, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 20);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "Search";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.txtAdmRPw);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.txtAdmPw);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtAdminUsername);
+            this.groupBox4.Location = new System.Drawing.Point(710, 448);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(686, 261);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Admin";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Location = new System.Drawing.Point(52, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 20);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Username";
+            // 
+            // txtAdminUsername
+            // 
+            this.txtAdminUsername.Location = new System.Drawing.Point(166, 53);
+            this.txtAdminUsername.Name = "txtAdminUsername";
+            this.txtAdminUsername.Size = new System.Drawing.Size(162, 22);
+            this.txtAdminUsername.TabIndex = 50;
+            // 
+            // txtAdmRPw
+            // 
+            this.txtAdmRPw.Location = new System.Drawing.Point(166, 131);
+            this.txtAdmRPw.Name = "txtAdmRPw";
+            this.txtAdmRPw.Size = new System.Drawing.Size(162, 22);
+            this.txtAdmRPw.TabIndex = 62;
+            this.txtAdmRPw.UseSystemPasswordChar = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Location = new System.Drawing.Point(4, 131);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(141, 20);
+            this.label18.TabIndex = 64;
+            this.label18.Text = "Repeat Password";
+            // 
+            // txtAdmPw
+            // 
+            this.txtAdmPw.Location = new System.Drawing.Point(166, 93);
+            this.txtAdmPw.Name = "txtAdmPw";
+            this.txtAdmPw.Size = new System.Drawing.Size(162, 22);
+            this.txtAdmPw.TabIndex = 61;
+            this.txtAdmPw.UseSystemPasswordChar = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.Location = new System.Drawing.Point(55, 95);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 20);
+            this.label19.TabIndex = 63;
+            this.label19.Text = "Password";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(233, 175);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 43);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmAdminPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1394, 721);
+            this.ClientSize = new System.Drawing.Size(1408, 721);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -570,6 +729,13 @@ namespace Hastane_Otomasyon
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hastaneOtomasyonDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -619,5 +785,20 @@ namespace Hastane_Otomasyon
         private System.Windows.Forms.TextBox txtDpId;
         private System.Windows.Forms.Label label15;
         private HastaneOtomasyonDataSet2TableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.BindingSource departmentBindingSource1;
+        private System.Windows.Forms.BindingSource hastaneOtomasyonDataSet2BindingSource;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtAdmRPw;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtAdmPw;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox txtAdminUsername;
     }
 }

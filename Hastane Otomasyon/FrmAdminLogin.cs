@@ -29,7 +29,7 @@ namespace Hastane_Otomasyon
             if (dt.Rows.Count > 0)
             {
                 FrmAdminPanel frm = new FrmAdminPanel();
-                
+                frm.txtAdminUsername.Text = txtUsername.Text;
                 this.Hide();
                 frm.Show();
                 
